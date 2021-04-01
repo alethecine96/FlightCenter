@@ -14,7 +14,7 @@ public class Flight {
     private int lenghtofflight;
 
 
-    public Flight(Airport airportdeparture, Airport airportarrive, AbstractPlane abstractPlane, int numberOfPassengers, int departurehour) {
+    Flight(Airport airportdeparture, Airport airportarrive, AbstractPlane abstractPlane, int numberOfPassengers, int departurehour) {
         this.departurehour = departurehour;
         this.numberOfPassengers = numberOfPassengers;
         this.abstractPlane = abstractPlane;
@@ -24,67 +24,67 @@ public class Flight {
     }
 
 
-    public int getDeparturehour() {
+    int getDeparturehour() {
         return departurehour;
     }
 
-    public void setDeparturehour(int departurehour) {
+    void setDeparturehour(int departurehour) {
         this.departurehour = departurehour;
     }
 
-    public int getIdFlight() {
+    int getIdFlight() {
         return idFlight;
     }
 
-    public boolean isWaitingforLanding() {
+    boolean isWaitingforLanding() {
         return isWaitingforLanding;
     }
 
-    public void setWaitingforLanding(boolean waitingforLanding) {
+    void setWaitingforLanding(boolean waitingforLanding) {
         isWaitingforLanding = waitingforLanding;
     }
 
-    public void setLenghtofflight(int lenghtofflight) {
+    void setLenghtofflight(int lenghtofflight) {
         this.lenghtofflight = lenghtofflight;
     }
 
-    public void setLandingStrip(LandingStrip landingStrip) {
+    void setLandingStrip(LandingStrip landingStrip) {
         this.landingStrip = landingStrip;
     }
 
-    public Airport getAirportdeparture() {
+    Airport getAirportdeparture() {
         return airportdeparture;
     }
 
-    public Airport getAirportarrive() {
+    Airport getAirportarrive() {
         return airportarrive;
     }
 
-    public LandingStrip getLandingStrip() {
+    LandingStrip getLandingStrip() {
         return landingStrip;
     }
 
-    public boolean isInflight() {
+    boolean isInflight() {
         return inflight;
     }
 
-    public void setInflight(boolean inflight) {
+    void setInflight(boolean inflight) {
         this.inflight = inflight;
     }
 
-    public int getHouroffly() {
+    int getHouroffly() {
         return houroffly;
     }
 
-    public void setHouroffly(int houroffly) {
+    void setHouroffly(int houroffly) {
         this.houroffly = houroffly;
     }
 
-    public int getNumberOfPassengers() {
+    int getNumberOfPassengers() {
         return numberOfPassengers;
     }
 
-    public void takeoff() {
+    void takeoff() {
         System.out.println("Il volo " + getIdFlight() + " con a bordo "+numberOfPassengers+" passeggeri sta decollando dalla pista numero "+ (getLandingStrip().getNumber()+1));
         inflight=true;
         getLandingStrip().setFull(true);
@@ -99,7 +99,7 @@ public class Flight {
 
     }
 
-    public void land(){
+    void land(){
         System.out.println("Il volo " + getIdFlight() + " sta atterrando sulla pista numero " + (getLandingStrip().getNumber()+1));
         System.out.println("");
         getLandingStrip().setFull(true);

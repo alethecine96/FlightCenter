@@ -2,19 +2,19 @@ public class LandingStrip {
     private int number;
     private Boolean full = false;
 
-    public LandingStrip(int number) {
+    LandingStrip(int number) {
         this.number = number;
     }
 
-    public Boolean getFull() {
+    Boolean getFull() {
         return full;
     }
 
-    public void setFull(Boolean full) {
+    void setFull(Boolean full) {
         this.full = full;
     }
 
-    public int getNumber() {
+    int getNumber() {
         return number;
     }
 }

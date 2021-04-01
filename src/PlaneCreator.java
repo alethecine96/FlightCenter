@@ -1,6 +1,6 @@
 public class PlaneCreator {
 
-    public AbstractPlane createPlane(String plane){
+    AbstractPlane createPlane(String plane){
         switch (plane){
             case "LITTLE":
                 return new LittlePassengerPlane(1500, 1200);

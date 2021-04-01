@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FlightManager implements Observer {
-    PlaneCreator planeCreator;
-    ArrayList<Flight> fly;
-    Time time;
-    Airport airporttocontrol;
+    private PlaneCreator planeCreator;
+    private ArrayList<Flight> fly;
+    private Time time;
+    private Airport airporttocontrol;
     public ArrayList<Airport> airports;
     private ArrayList<Flight> flights;
-    public FlightManager(){
+    FlightManager(){
         planeCreator = new PlaneCreator();
         fly = new ArrayList<>();
         airports = new ArrayList<>();
@@ -18,10 +18,10 @@ public class FlightManager implements Observer {
         flights = new ArrayList<>();
     }
 
-    public void setairportcontrol() throws FileNotFoundException{
+    void setairportcontrol() throws FileNotFoundException{
         Scanner scanner = new Scanner(new File("./File/Coordinate"));
         while (scanner.hasNextLine()) {
-            airports.add(new Airport(scanner.next(),scanner.nextInt(), sessadecimali(scanner.nextInt(), scanner.nextInt(),scanner.nextInt()), sessadecimali(scanner.nextInt(), scanner.nextInt(),scanner.nextInt())));
+            airports.add(new Airport(scanner.next(),scanner.nextInt(), getCoordinate(scanner.nextInt(), scanner.nextInt(),scanner.nextInt()), getCoordinate(scanner.nextInt(), scanner.nextInt(),scanner.nextInt())));
         }
         System.out.println("Quale aereoporto vuoi controllare?");
         for(int j = 0; j<airports.size();j++){
@@ -34,7 +34,7 @@ public class FlightManager implements Observer {
         airporttocontrol = airports.get(l);
     }
 
-    public void createFlight(){
+    void createFlight(){
         Airport airportdeparture = airporttocontrol;
         int[] departurehour = {1, 5, 8, 11, 17};
         int numberOfPassengers = 0;
@@ -59,7 +59,7 @@ public class FlightManager implements Observer {
         }
     }
 
-    public void start(){
+    void start(){
         time.startTime();
     }
 
@@ -111,20 +111,20 @@ public class FlightManager implements Observer {
         }
     }
 
-    protected double getDistance(double latitudestart, double longitudestart, double latitudearrive, double longitudearrive){
+    double getDistance(double latitudestart, double longitudestart, double latitudearrive, double longitudearrive){
         double difference = (longitudestart-longitudearrive);
         double dist = Math.acos(Math.sin(latitudestart) * Math.sin(latitudearrive) + Math.cos(latitudestart) * Math.cos(latitudearrive) * Math.cos(difference)) * 6371;
         return dist;
     }
 
-    protected double sessadecimali(double gradi, double primi, double secondi){
+    double getCoordinate(double gradi, double primi, double secondi){
         double risultato;
         risultato = gradi+(primi/60)+(secondi/3600);
         double u = (risultato*2*3.14/360);
         return u;
     }
 
-    private int selectlandingstrip()  {
+    int selectlandingstrip()  {
         for(int j = 0; j<airporttocontrol.getLandingStrips().size();j++){
             if(airporttocontrol.getLandingStrips().get(j).getFull())
                 System.out.println("Pista n° "+(j+1)+" OCCUPATA");

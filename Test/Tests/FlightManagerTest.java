@@ -22,7 +22,7 @@ public class FlightManagerTest {
     void airportCreation() throws FileNotFoundException {
         Scanner scanner = new Scanner(new File("./File/Coordinate"));
         while (scanner.hasNextLine()) {
-            airports.add(new Airport(scanner.next(),scanner.nextInt(), flightManagerTest.sessadecimali(scanner.nextInt(), scanner.nextInt(),scanner.nextInt()), flightManagerTest.sessadecimali(scanner.nextInt(), scanner.nextInt(),scanner.nextInt())));
+            airports.add(new Airport(scanner.next(),scanner.nextInt(), flightManagerTest.getCoordinate(scanner.nextInt(), scanner.nextInt(),scanner.nextInt()), flightManagerTest.getCoordinate(scanner.nextInt(), scanner.nextInt(),scanner.nextInt())));
         }
         for(Airport airport: airports) {
             for (Airport airport1 : airports) {

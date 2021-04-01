@@ -4,27 +4,27 @@ public abstract class AbstractPlane {
     private int speed;
     private int range;
 
-    public AbstractPlane(){
+    AbstractPlane(){
         planeId = (int)(Math.random()*1000000);
     }
 
-    public int getSpeed() {
+    int getSpeed() {
         return speed;
     }
 
-    public void setSpeed(int speed) {
+    void setSpeed(int speed) {
         this.speed = speed;
     }
 
-    public String getPlaneName() {
+    String getPlaneName() {
         return planeName;
     }
 
-    public int getRange() {
+    int getRange() {
         return range;
     }
 
-    public void setRange(int range) {
+    void setRange(int range) {
         this.range = range;
     }
 }

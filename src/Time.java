@@ -1,6 +1,6 @@
 class Time extends Subject{
     private static Time time;
-    int hour = 0;
+    private int hour = 0;
     private Time(Observer observer) {
         this.observer = observer;
     }
@@ -11,7 +11,7 @@ class Time extends Subject{
         return time;
     }
 
-    public void startTime(){
+    void startTime(){
         while(hour !=24){
             waitSec(3);
             notifyObserver();
@@ -19,7 +19,7 @@ class Time extends Subject{
         }
     }
 
-    public void waitSec(int seconds){
+    void waitSec(int seconds){
         try {
             Thread.sleep(seconds*1000);
         }catch (InterruptedException e){
@@ -27,7 +27,7 @@ class Time extends Subject{
         }
     }
 
-    public int getHour() {
+    int getHour() {
         return hour;
     }
 }
