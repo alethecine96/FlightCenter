@@ -14,9 +14,9 @@ public class PlaneBuilderTest {
 
     @Test
     void testPlaneCreation(){
-        LittlePassengerPlane littlePassengerPlane = new LittlePassengerPlane(1500, 1200);
-        MidPassengerPlane midPassengerPlane = new MidPassengerPlane(1000, 1700);
-        MidPassengerPlane bigPassengerPlane = new MidPassengerPlane(750, 3000);
+        LittlePassengerPlane littlePassengerPlane = new LittlePassengerPlane();
+        MidPassengerPlane midPassengerPlane = new MidPassengerPlane();
+        MidPassengerPlane bigPassengerPlane = new MidPassengerPlane();
         assertEquals(littlePassengerPlane.getSpeed(), testplaneCreator.createPlane("LITTLE").getSpeed());
         assertEquals(littlePassengerPlane.getRange(), testplaneCreator.createPlane("LITTLE").getRange());
         assertEquals(midPassengerPlane.getSpeed(), testplaneCreator.createPlane("MID").getSpeed());

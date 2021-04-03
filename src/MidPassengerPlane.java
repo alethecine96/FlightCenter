@@ -1,7 +1,7 @@
 public class MidPassengerPlane extends AbstractPlane {
-    MidPassengerPlane(int speed, int range){
+    MidPassengerPlane(){
         super();
-        setSpeed(speed);
-        setRange(range);
+        setSpeed(1000);
+        setRange(1700);
     }
 }

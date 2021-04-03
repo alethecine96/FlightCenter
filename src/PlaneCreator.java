@@ -3,11 +3,11 @@ public class PlaneCreator {
     AbstractPlane createPlane(String plane){
         switch (plane){
             case "LITTLE":
-                return new LittlePassengerPlane(1500, 1200);
+                return new LittlePassengerPlane();
             case "MID":
-                return new MidPassengerPlane(1000, 1700);
+                return new MidPassengerPlane();
             case "BIG":
-                return new BigPassengerPlane(750, 3000);
+                return new BigPassengerPlane();
         }
         return null;
     }

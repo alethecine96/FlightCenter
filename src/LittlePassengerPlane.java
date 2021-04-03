@@ -1,8 +1,8 @@
 public class LittlePassengerPlane extends AbstractPlane {
-    LittlePassengerPlane(int speed, int range) {
+    LittlePassengerPlane() {
         super();
-        setSpeed(speed);
-        setRange(range);
+        setSpeed(1500);
+        setRange(1200);
 
     }
 
