@@ -1,0 +1,1 @@
+Questo è un progetto per il controllo di aereoporti, permette di controllare un aereoporto e di controllare gli aerei da far decollare/atterrare a secodna della disponibilità di piste dell'aereoporto scelto.
