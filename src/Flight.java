@@ -86,22 +86,16 @@ public class Flight {
 
     void takeoff() {
         System.out.println("Il volo " + getIdFlight() + " con a bordo "+numberOfPassengers+" passeggeri sta decollando dalla pista numero "+ (getLandingStrip().getNumber()+1));
+        abstractPlane.printplanename();
         inflight=true;
         getLandingStrip().setFull(true);
-        for(int j=0;j<30;j++) {
-            System.out.print("-");
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
+        System.out.println("Decollo completato");
     }
 
     void land(){
         System.out.println("Il volo " + getIdFlight() + " sta atterrando sulla pista numero " + (getLandingStrip().getNumber()+1));
-        System.out.println("");
+        abstractPlane.printplane();
+        System.out.println("Atterraggio completato");
         getLandingStrip().setFull(true);
         inflight = false;
     }

@@ -27,4 +27,6 @@ public abstract class AbstractPlane {
     void setRange(int range) {
         this.range = range;
     }
+
+    void printplane(){};
 }

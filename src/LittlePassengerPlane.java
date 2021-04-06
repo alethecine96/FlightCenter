@@ -6,5 +6,16 @@ public class LittlePassengerPlane extends AbstractPlane {
 
     }
 
+    @Override
+    void printplane(){
+        System.out.println("nome aereo: LITTLE con velocità "+getSpeed()+" km/h e autonomia "+getRange()+" km");
+        System.out.println("Tempo di attesa esecuzione operazione: 2 secondi");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
