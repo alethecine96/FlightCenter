@@ -86,7 +86,7 @@ public class Flight {
 
     void takeoff() {
         System.out.println("Il volo " + getIdFlight() + " con a bordo "+numberOfPassengers+" passeggeri sta decollando dalla pista numero "+ (getLandingStrip().getNumber()+1));
-        abstractPlane.printplanename();
+        abstractPlane.printplane();
         inflight=true;
         getLandingStrip().setFull(true);
         System.out.println("Decollo completato");
